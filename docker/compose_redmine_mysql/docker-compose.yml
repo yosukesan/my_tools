@@ -1,0 +1,23 @@
+
+version: "3"
+
+services:
+    redmine:
+        image : redmine
+        environment:
+            - DB_NAME=redmine_production
+            - DB_USER=redmine
+            - DB_PASS=kansaidebian
+        ports:
+            - "8081:80"
+
+    database:
+        image : mariadb
+        environment:
+            - MYSQL_ROOT_PASSWORD=db_kansaidebian
+            - DB_HOST=mysql 
+            - DB_NAME=redmine_production
+            - DB_USER=redmine
+            - DB_PASS=kansaidebian
+        ports:
+            - "33304:3306"

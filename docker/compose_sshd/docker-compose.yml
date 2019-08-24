@@ -1,0 +1,3 @@
+version : '3' # compose file version
+services:
+    debian-sshd:
