@@ -1,0 +1,13 @@
+set tabstop=4
+set expandtab
+syntax on
+set number
+"set fileencodings=iso-2022-jp
+
+"
+" return the cursor to the original position when re-open a file.
+"
+augroup vimrcEx
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+  \ exe "normal g`\"" | endif
+augroup END
