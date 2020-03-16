@@ -1,0 +1,9 @@
+
+- hosts: targets
+  connection: local
+  tasks:
+    - name: output message
+      debug: msg="{{ message }}"
+    - name: output fruits
+      debug: msg="{{ item.value.amount }} {{ item.key }}"
+      with_dict: "{{ fruits }}"

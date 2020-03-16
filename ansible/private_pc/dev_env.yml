@@ -1,0 +1,10 @@
+- hosts: localhosts
+  user: root
+  tasks:
+    - name: dev env
+      apt:
+        name:
+            - vim
+            - g++
+            - make
+            - cmake
