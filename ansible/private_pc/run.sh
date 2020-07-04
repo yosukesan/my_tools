@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # ping-pong test
-ansible-playbook  inventry/hosts.yml
+sudo ansible-playbook  -i inventry/hosts dev_env.yml

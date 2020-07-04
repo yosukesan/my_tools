@@ -1,10 +1,15 @@
-- hosts: localhosts
+---
+- hosts: targets
+  connection: local
   user: root
   tasks:
     - name: dev env
       apt:
         name:
+            - sudo
             - vim
             - g++
             - make
             - cmake
+            - global
+            - ctags
