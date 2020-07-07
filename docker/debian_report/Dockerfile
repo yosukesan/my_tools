@@ -1,9 +1,23 @@
 
-FROM debian
+FROM debian:sid
 LABEL maintainer = "yosukesan"
 
-RUN apt-get update && apt-get install -y apt-utils
-RUN apt-get install -y openssh-server
+RUN apt-get update && apt-get install -y apt-utils \
+    openssh-server \
+    git \
+    locales \
+    lv \
+    make \
+    poppler-data \
+    python3-pygments \
+    texlive-lang-japanese \
+    texlive-latex-extra \
+    texlive-latex-recommended \
+    texlive-fonts-recommended \
+    texlive-plain-generic \
+    ghostscript-x \
+    evince
+
 RUN mkdir /var/run/sshd
 #RUN echo `openssl rand -base64 32` | chpasswd | tee
 RUN echo 'root:ytest' | chpasswd 
