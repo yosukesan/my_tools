@@ -1,0 +1,3 @@
+
+echo -e "all:
+	g++ -g -O0 main.cpp" >> Makefile 

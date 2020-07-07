@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then 
+    echo "usage: cp2x \${target}"
+fi
+
+cat $1 | xsel --clipboard
