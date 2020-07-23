@@ -1,0 +1,41 @@
+#!/bin/bash
+
+GENDEV_MODE=""
+
+function usage (){
+    echo -e "Generating competitive programming env.\nby Yosuke OTSUKI\nMIT License\n"
+    echo -e "options:\n--cpp:\tgenerate cpp\n--go:\tgenerate go\n--help:\tdisplay this message\n"
+}
+
+function main_cpp (){
+    echo -e "#include<bits/stdc++.h>\nusing namespace std;\n\nint main(){\n\treturn 0;\n}" > main.cpp
+}
+
+function main_go(){
+    echo -e "package main\nimport \"fmt\"\n\nfunc main(){\n}" > main.go
+}
+
+#==============================================================================
+# main
+#==============================================================================
+genmake
+echo -e "echo \"\"\necho | ./a.out" > run.sh
+
+if [ $? == 0 ]; then
+    usage
+    exit 0
+fi
+
+for opt in "$@"; do
+    case "${opt}" in
+    '--cpp' )
+        main_cpp
+    ;;
+    '--go' )
+        main_go
+    ;;
+    '--help' )
+        usage
+    ;;
+    esac
+done
