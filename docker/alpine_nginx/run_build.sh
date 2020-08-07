@@ -1,0 +1,8 @@
+
+CONTAINER_PREFIX=yosukesan
+CONTAINER_NAME=alpine_nginx
+CONTAINER_IMAGE_NAME="${CONTAINER_PREFIX}/${CONTAINER_NAME}"
+
+docker image  build -t ${CONTAINER_IMAGE_NAME} .
+
+docker run --name ${CONTAINER_NAME} -d -p 8888:80 ${CONTAINER_IMAGE_NAME}
