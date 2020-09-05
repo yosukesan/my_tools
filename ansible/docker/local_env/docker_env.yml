@@ -1,0 +1,12 @@
+---
+- hosts: targets
+  connection: local
+  user: root
+  tasks:
+    - name: setup_docker
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/debian buster stable
+    - name: get_docker
+      apt:
+        name:
+          docker-ce
