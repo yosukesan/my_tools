@@ -17,6 +17,8 @@ function parse_html(){
         #echo ${arr_currs[$i]} ${arr_rates[$i]}
         rates_in_EUR[${arr_currs[$i]}]+=${arr_rates[$i]}
     done
+    arr_currs[${#arr_rates[@]}]="EUR"
+    rates_in_EUR["EUR"]+="1.0"
 }
 
 function base2A(){
