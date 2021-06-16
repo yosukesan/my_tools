@@ -1,0 +1,5 @@
+#!/bin/bash
+
+image=$1
+
+curl https://registry.hub.docker.com/v1/repositories/${image}/tags | jq . | grep name | sort -n
